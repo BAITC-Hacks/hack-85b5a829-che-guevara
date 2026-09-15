@@ -52,17 +52,22 @@
                     <input type="month" id="month-filter">
                 </div>
 
-                <div class="summary">
-                    <div class="total">
-                        <h3>Общий итог: <span id="total-amount">0</span></h3>
-                    </div>
-                    <div class="categories-summary" id="categories-summary">
-                        <!-- Сюда добавляются категории -->
+                <div class="dashboard-card">
+                    <div class="summary">
+                        <div class="total">
+                            <h3>Общий итог</h3>
+                            <span id="total-amount">0</span>
+                        </div>
+                        <div class="categories-summary" id="categories-summary">
+                            <!-- Сюда добавляются категории -->
+                        </div>
                     </div>
                 </div>
 
-                <div class="expenses-list">
-                    <h3>Список расходов</h3>
+                <div class="dashboard-card expenses-list">
+                    <div class="expenses-list-header">
+                        <h3>Список расходов</h3>
+                    </div>
                     <div id="empty-state" class="empty-state">Нет расходов в выбранном месяце</div>
                     <ul id="expenses-ul">
                         <!-- Сюда добавляются расходы -->
