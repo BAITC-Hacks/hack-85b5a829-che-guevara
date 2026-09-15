@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Учёт личных расходов студента</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Учёт личных расходов</h1>
+        </header>
+        
+        <main>
+            <section class="form-section">
+                <h2>Добавить расход</h2>
+                <form id="expense-form">
+                    <div class="form-group">
+                        <label for="date">Дата*</label>
+                        <input type="date" id="date" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="category">Категория*</label>
+                        <select id="category" required>
+                            <option value="" disabled selected>Выберите категорию</option>
+                            <option value="Еда">Еда</option>
+                            <option value="Транспорт">Транспорт</option>
+                            <option value="Жильё">Жильё</option>
+                            <option value="Развлечения">Развлечения</option>
+                            <option value="Образование">Образование</option>
+                            <option value="Одежда">Одежда</option>
+                            <option value="Другое">Другое</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="amount">Сумма*</label>
+                        <input type="number" id="amount" min="0.01" step="0.01" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="description">Описание (необязательно)</label>
+                        <input type="text" id="description" placeholder="Например: Обед в столовой">
+                    </div>
+                    <button type="submit">Добавить</button>
+                    <div id="error-message" class="error hidden"></div>
+                </form>
+            </section>
+
+            <section class="dashboard">
+                <div class="filter-group">
+                    <label for="month-filter">Выберите месяц:</label>
+                    <input type="month" id="month-filter">
+                </div>
+
+                <div class="summary">
+                    <div class="total">
+                        <h3>Общий итог: <span id="total-amount">0</span></h3>
+                    </div>
+                    <div class="categories-summary" id="categories-summary">
+                        <!-- Сюда добавляются категории -->
+                    </div>
+                </div>
+
+                <div class="expenses-list">
+                    <h3>Список расходов</h3>
+                    <div id="empty-state" class="empty-state">Нет расходов в выбранном месяце</div>
+                    <ul id="expenses-ul">
+                        <!-- Сюда добавляются расходы -->
+                    </ul>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
